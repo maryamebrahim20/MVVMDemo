@@ -35,22 +35,22 @@ class MainActivity : AppCompatActivity() {
         viewModel.Weather().observe(this, Observer {
             if(it.weather!=null){
                 val stringBuilder = "Country: " +
-                        it.sys!!.country +
+                        it.sys?.country +
                         "\n" +
                         "Temperature: " +
-                        it.main!!.temp +
+                        it.main?.temp +
                         "\n" +
                         "Temperature(Min): " +
-                        it.main!!.temp_min +
+                        it.main?.temp_min +
                         "\n" +
                         "Temperature(Max): " +
-                        it.main!!.temp_max +
+                        it.main?.temp_max +
                         "\n" +
                         "Humidity: " +
-                        it.main!!.humidity +
+                        it.main?.humidity +
                         "\n" +
                         "Pressure: " +
-                        it.main!!.pressure
+                        it.main?.pressure
 
                 textView.text= stringBuilder
             }
