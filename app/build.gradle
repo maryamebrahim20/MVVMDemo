@@ -9,11 +9,15 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.example.myapplication"
-        minSdkVersion 15
+        minSdkVersion 24
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
     buildTypes {
         release {
@@ -43,4 +47,22 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.5.2'
 
     implementation 'com.google.android.gms:play-services-location:17.0.0'
+
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0-rc03'
+
+    def lifecycle_version = "2.2.0-rc02"
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0'
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+
+    def koinVersion = '2.0.1'
+    implementation "org.koin:koin-android:$koinVersion"
+    implementation 'org.koin:koin-android-architecture:1.0.0-alpha-12'
+    implementation "org.koin:koin-androidx-viewmodel:$koinVersion"
+
+
+    def kotlinCoroutinesVersion = "1.2.1"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinCoroutinesVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutinesVersion"
+
 }
